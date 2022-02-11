@@ -12,7 +12,7 @@
       stage('Ansible') {       
         ansiblePlaybook (
             inventory: 'hosts.yaml',          
-            playbook: 'play-book.yaml',
+            playbook: 'playbook.yaml',
             colorized: true,
             become: true,         
         )
