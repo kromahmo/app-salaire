@@ -1,5 +1,5 @@
 - name: install serveur web
-   hosts: all
-   roles:
-     - apache
-     - mariadb
+  hosts: all
+  roles:
+    - apache
+    - mariadb
