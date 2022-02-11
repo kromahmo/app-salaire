@@ -5,14 +5,14 @@
       stage('SSH') {
         sh "apk add ansible sshpass"
         sh "rm -rf /root/.ssh"
-        sh "echo \"192.168.131.129 app-salaire.corentin.form\" > /etc/hosts"
+        sh "echo \"192.168.131.130 app-salaire.corentin.form\" > /etc/hosts"
         sh "ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa"
         sh "sshpass -p 'Respons11' ssh-copy-id -o stricthostkeychecking=no root@192.168.131.130"
       }
       stage('Ansible') {       
         ansiblePlaybook (
-            inventory: 'hosts.yml',          
-            playbook: 'playbook.yml',
+            inventory: 'hosts.yaml',          
+            playbook: 'playbook.yaml',
             colorized: true,
             become: true,         
         )
