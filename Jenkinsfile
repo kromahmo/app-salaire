@@ -5,9 +5,9 @@
       stage('SSH') {
         sh "apk add ansible sshpass"
         sh "rm -rf /root/.ssh"
-        sh "echo \"192.168.131.130 app-salaire.corentin.form\" > /etc/hosts"
+        sh "echo \"192.168.56.102 app-salaire.kromahmo.form\" > /etc/hosts"
         sh "ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa"
-        sh "sshpass -p 'Respons11' ssh-copy-id -o stricthostkeychecking=no root@192.168.131.130"
+        sh "sshpass -p 'Respons11' ssh-copy-id -o stricthostkeychecking=no root@192.168.56.102"
       }
       stage('Ansible') {
         ansiblePlaybook (
